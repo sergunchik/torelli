@@ -4,7 +4,7 @@ abstract: We prove that a (colored) trivalent graph can be recovered from (the p
 author: Pieter Belmans, Sergey Galkin, Swarnava Mukhopadhyay
 ---
 
-To a graph $$G$$ with the set \(V(G)\) of trivalent vertices
+To a graph $G$ with the set $V(G)$ of trivalent vertices
 associate a vector space $S(G)$ with a basis $e(i)$ enumerated by
 (non-oriented) edges of $G$,
 and a polytope $P(G)$ there given as a convex hull of
