@@ -2,6 +2,7 @@
 title: Combinatorial non-abelian Torelli theorem
 abstract: We prove that a (colored) trivalent graph can be recovered from (the polar dual of) the associated quantum Clebsch-Gordan polytope and that any isomorphism between such polytopes is induced by a unique properly defined isomorphism of underlying colored graphs.
 author: Pieter Belmans, Sergey Galkin, Swarnava Mukhopadhyay
+katex: True
 ---
 
 To a graph $G$ with the set $V(G)$ of trivalent vertices
