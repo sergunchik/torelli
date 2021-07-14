@@ -59,15 +59,15 @@ We will reconstruct the graph from the affine relations between the vertices of 
 
 ## The proof of correctness.
 
-First two assumptions imply that all vectors $p(v,s)$ are distinct.
+The first two assumptions imply that all vectors $p(v,s)$ are distinct.
 
-Second assumption implies that each vector $p(v,s)$ in the basis $\{e(i)\}$
+The second assumption implies that each vector $p(v,s)$ in the basis $\{e(i)\}$
 is a permutation of $(±1,±1,±1,0,0,...,0)$.
 So all vectors $p(v,s)$ are equidistant from $0$ with respect
 to the Euclidean norm in which the basis $e(i)$ is orthonormal.
 This implies that vectors $p(v,s)$ are convex independent,
 thus their set coincides with the set of the rays (vertices of the polytope $P(G)$),
-call it further by $R$.
+which we will denote $R$.
 The set $R$ of rays is partitioned into quadruples
 $\{ p(v,s) \}$ enumerated by vertices $v \in V(G)$.
 If $x,y,z,w$ are four distinct admissible sign assignments then
@@ -86,7 +86,7 @@ there are at least two distinct ways to write $e(i)$ as a semi-sum of two vector
 $2 e(i) = p(v,x) + p(v,y) = p(v',z') + p(v',w')$,
 and similarly $-2 e(i) = p(v,z) + p(v,w) = p(v',x') + p(v',y')$.
 To prove the claim of Step 1 it remains to show that no other vector
-have two representations as a semi-sum.
+has two representations as a semi-sum.
 
 Now let us show that the first assumption implies that
 if for some vertices $u,u',v,v' \in V(G)$ and signs $x,y,z,w$ there is a relation
@@ -118,7 +118,7 @@ is equivalent to $p(v,x) - p(v,y) = p(v',z) - p(v',w)$
 For every vertex $v$ with edges $i,j,k$
 the $12$ semi-differences are equal to $±e(i)±e(j),±e(i)±e(k),±e(j)±e(k)$.
 So if for two distinct vertices $v,v' \in V(G)$
-and some sign choices $x,y,z,w$ there holds a relation \ref{ssd},
+and some sign choices $x,y,z,w$ the relation \eqref{ssd} holds,
 then vertices $v$ and $v'$ would be connected by at least two edges,
 contradicting to the third assumption.
 
@@ -131,11 +131,11 @@ A *colored graph* is a pair $(G,c)$ of a graph $G$ and a coloring function
 $c : V(G) \to \{\pm1\}$. Define isomorphisms between colored graphs $(G,c)$
 and $(G',c')$ as pairs $(f,g)$ of as graph isomorphism $f: G \to G'$
 and a function $g : E(G') \to \{\pm1\}$ such that for any
-vertex $v\in V(G)$ with edges of $f(v)$ denoted $i',j',k'$ there holds
-$c'(fv) / c(v) = g(i') g(j') g(k')$. In particular if $f$ is the identity
+vertex $v\in V(G)$ with edges of $f(v)$ denoted $i',j',k'$ the relation 
+$c'(fv) / c(v) = g(i') g(j') g(k')$ holds. In particular if $f$ is the identity
 and we regard the colorings $c,c'$ as $0$-chains, then the respective morphisms
 is the set of $1$-chains whose boundary is the ratio of $c'$ and $c$,
-so the set of automorphism is principal homogeneous over the first homology group
+so the set of automorphisms is principal homogeneous over the first homology group
 $H_1(G,\{\pm1\})$. The composition of $(f,g) : (G,c) \to (G',c')$
 and $(f',g') : (G',c') \to (G'',c'')$ is $(f'\circ f, g'')$
 where $g''(i'') := g'(i'') \cdot \prod_{f'(i') = i''} g'(i')$.
@@ -146,7 +146,7 @@ with either $c = c' \circ f, g = 1$
 or $f$ being identity and $g$ a boundary of a single edge.
 
 Define $P(G,c)$ as the convex hull in $S(G)$ of rays $p(v,s)$ with $s(i) s(j) s(k) = c(v)$
-(old definition corresponds to the constant coloring by $+1$).
+(the old definition corresponds to the constant coloring by $+1$).
 
 Any isomorphism $(f,g): (G,c) \to (G',c')$
 of colored graphs naturally induces an isomorphism 
