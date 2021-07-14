@@ -129,7 +129,7 @@ Now Step 1 is justified and Step 2 is straightforward.
 
 A *colored graph* is a pair $(G,c)$ of a graph $G$ and a coloring function
 $c : V(G) \to \{\pm1\}$. Define isomorphisms between colored graphs $(G,c)$
-and $(G',c')$ as pairs $(f,g)$ of as graph isomorphism $f: G \to G'$
+and $(G',c')$ as pairs $(f,g)$ of a graph isomorphism $f: G \to G'$
 and a function $g : E(G') \to \{\pm1\}$ such that for any
 vertex $v\in V(G)$ with edges of $f(v)$ denoted $i',j',k'$ the relation 
 $c'(fv) / c(v) = g(i') g(j') g(k')$ holds. In particular if $f$ is the identity
