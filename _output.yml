@@ -1,0 +1,9 @@
+bookdown::pdf_document2:
+  latex_engine: lualatex
+  includes: 
+    in_header: preamble.tex
+  keep_tex: yes
+  citation_package: biblatex
+  biblio-style: alphabetic
+  biblatexoptions: [backend=biber, maxbibnames=99, doi=false]
+katex: True
