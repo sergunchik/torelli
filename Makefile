@@ -8,7 +8,7 @@ PDF  = $(MD:.md=.pdf)
 # compiler from MarkDown to HTML, LaTeX and PDF
 PD = pandoc
 
-all:	html tex pdf;
+all:	pdf;
 html:	$(HTML);
 	$(PD) -s -o all.html $(HTML)
 tex:	$(TEX);
@@ -21,7 +21,7 @@ pdf:	$(PDF);
 %.tex:	%.md;
 	$(PD) -o $@ $<
 %.pdf:  %.md;
-	$(PD) --pdf-engine=lualatex -o $@ $<
+	echo 'rmarkdown::render("$<")' | R -s
 clean:	;
 	@latexmk -silent -C > /dev/null
 	rm -f $(HTML) $(TEX) $(PDF) all.*
