@@ -1,8 +1,17 @@
 ---
 title: Combinatorial non-abelian Torelli theorem
-abstract: We prove that a (colored) trivalent graph can be recovered from (the polar dual of) the associated quantum Clebsch-Gordan polytope and that any isomorphism between such polytopes is induced by a unique properly defined isomorphism of underlying colored graphs.
-author: Pieter Belmans, Sergey Galkin, Swarnava Mukhopadhyay
-katex: True
+author:
+        - Pieter Belmans
+        - Sergey Galkin
+        - Swarnava Mukhopadhyay
+abstract: |
+  We prove that a (colored) trivalent graph can be recovered from (the polar dual of) the associated quantum Clebsch-Gordan polytope and that any isomorphism between such polytopes is induced by a unique properly defined isomorphism of underlying colored graphs.
+keywords:
+  - trivalent graph
+  - lattice polytope
+  - quantum Clebsch-Gordan
+  - Torelli theorem
+bibliography: torelli.bib
 ---
 
 To a graph $G$ with the set $V(G)$ of trivalent vertices
@@ -20,7 +29,7 @@ Let us prove that the polytopes $P(G)$ to $P(G')$ can be mapped to each other
 by a pair of (real) affine transformations
 if and only if the graphs $G$ and $G'$ are isomorphic.
 
-## Assumptions
+# Assumptions
 The graph $G$ is said to be of principal series if it satisfies the following:
 
 1. Every connected component of $G$ has at least $5$ trivalent vertices.
@@ -31,7 +40,7 @@ The graph $G$ is said to be of principal series if it satisfies the following:
 
 4. Graph $G$ has no leaves.
 
-## Algorithm/Lemma
+# Algorithm/Lemma
 Let $P = P(G)$ be a polytope in a real affine space $S = S(G)$
 associated with a graph $G$ of principal series.
 We will reconstruct the graph from the affine relations between the vertices of the polytope
@@ -57,7 +66,7 @@ We will reconstruct the graph from the affine relations between the vertices of 
    and the adjacency matrix between the vertices is given by the maximal value
    of the scalar products between the representative rays.
 
-## The proof of correctness.
+# The proof of correctness.
 
 The first two assumptions imply that all vectors $p(v,s)$ are distinct.
 
@@ -125,7 +134,7 @@ contradicting to the third assumption.
 Now Step 1 is justified and Step 2 is straightforward.
 
 
-## Colorings
+# Colorings
 
 A *colored graph* is a pair $(G,c)$ of a graph $G$ and a coloring function
 $c : V(G) \to \{\pm1\}$. Define isomorphisms between colored graphs $(G,c)$
@@ -135,8 +144,8 @@ vertex $v\in V(G)$ with edges of $f(v)$ denoted $i',j',k'$ the relation
 $c'(fv) / c(v) = g(i') g(j') g(k')$ holds. In particular if $f$ is the identity
 and we regard the colorings $c,c'$ as $0$-chains, then the respective morphisms
 is the set of $1$-chains whose boundary is the ratio of $c'$ and $c$,
-so the set of automorphisms is principal homogeneous over the first homology group
-$H_1(G,\{\pm1\})$. The composition of $(f,g) : (G,c) \to (G',c')$
+so the set of automorphisms is principal homogeneous over the first relative homology group
+$H_1(G,∂G;\{\pm1\})$. The composition of $(f,g) : (G,c) \to (G',c')$
 and $(f',g') : (G',c') \to (G'',c'')$ is $(f'\circ f, g'')$
 where $g''(i'') := g'(i'') \cdot \prod_{f'(i') = i''} g'(i')$.
 
@@ -155,7 +164,7 @@ For example, the generators of the first kind correspond to "permutations"
 and the generators of the second kind correspond to linear transformations
 that send $e(i)$ to $-e(i)$ for the chosen edge $i$ and preserve all other basic vectors.
 
-### Colored combinatorial non-abelian Torelli theorem
+## Colored combinatorial non-abelian Torelli theorem
 Association $P$ is a full functor from the groupoid of colored
 graphs of principal series to the groupoid of convex polytopes
 and affine isomorphisms. That is, any affinely linear isomorphism
@@ -177,4 +186,51 @@ of a single vector in the base corresponds to simultaneous
 change of the color of the two vertices adjacent to this edge.
 
 
-## Algebro-geometric interpretation
+# Algebro-geometric interpretation
+
+In algebraic geometry the classical (abelian) Torelli is a theorem and an algorithm
+that reconstructs a closed Riemann surface (smooth projective algebraic curve)
+from the pair its Jacobian variety $J(C)$ equipped with a principal polarization
+by $\Theta$-divisor. Usually ``Torelli package'' also has a a relation
+between automorphisms of the original curve and automorphisms of Jacobian
+as a polarized abelian variety.
+
+The Jacobian of a curve has an interpretation as (a connected component of)
+the Picard variety, that parametrizes isomorphism classes of line bundles
+of fixed numerical degree. One may also consider moduli spaces
+that parametrize (equivalence classes of) (semi-stable) vector bundles of higher ranks
+$r$, often denoted $U_r(C)$, the Picard variety being $U_1(C)$.
+The fibers of the determinantal fibration $\det: U_r(C) \to U_1(C)$ 
+over a line bundle $L\in U_1(C)$ are denoted by $SU_r(C,L)$,
+and their isomorphism classes depend only on the curve $C$, rank $r$
+and the residue $\mod r$ of the numerical degree of $L$,
+e.g. in case of rank two only the parity of the degree matters.
+
+Unlike Jacobians the spaces $SU_r(C,L)$ have (anti-)canonical polarizations,
+and a non-abelian Torelli theorem for smooth curves
+proved in @MR1336336 reconstructs the curve $C$ from
+the respective moduli space $SU_r(C,L)$.
+[@MR1336336] also describes the group of automorphisms of these moduli spaces
+as extension of the automorphisms of the curve by $r$-torsion subgroup in Jacobian.
+
+In the combinatorial versions of these theorems the Riemann surfaces
+are replaced by trivalent graphs and the moduli spaces are replaced by convex polytopes.
+
+The analogy between curves and trivalent graphs is standard and
+can be explained by the following underlying geometry.
+With a graph one can associate a _graph curve_, the union of projective lines
+enumerated by vertices of the graph with some common points (nodes)
+corresponding to the edges. Leaves (if there are any) correspond to additional marked
+smooth points. These curves form a finite set of
+the deepest corners of the Deligne-Mumford moduli space of stable marked curves.
+A path between the corner and the bulk of the Deligne-Mumford space corresponds
+to a degeneration of a smooth algebraic curve to the graph curve,
+and the respective vanishing cycles give the Thurston cut system
+of the Riemann surface into trinions (pairs of pants, spheres with three holes,
+encoded by the same graph. 
+
+Moduli spaces such as Jacobians and $SU_r(C,L)$ vary together with
+the smooth curve $C$, and it is natural to look for their limits
+as $C$ tends to a graph curve $C(G)$.
+
+# References
