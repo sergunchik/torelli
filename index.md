@@ -1,9 +1,9 @@
 ---
-title: Combinatorial non-abelian Torelli theorem
+title: "Combinatorial non-abelian Torelli theorem"
 author:
-        - Pieter Belmans
-        - Sergey Galkin
-        - Swarnava Mukhopadhyay
+  - Pieter Belmans
+  - Sergey Galkin
+  - Swarnava Mukhopadhyay
 abstract: |
   We prove that a (colored) trivalent graph can be recovered from (the polar dual of) the associated quantum Clebsch-Gordan polytope and that any isomorphism between such polytopes is induced by a unique properly defined isomorphism of underlying colored graphs.
 keywords:
@@ -13,6 +13,8 @@ keywords:
   - Torelli theorem
 bibliography: torelli.bib
 ---
+
+# Graphs and polytopes
 
 To a graph $G$ with the set $V(G)$ of trivalent vertices
 associate a vector space $S(G)$ with a basis $e(i)$ enumerated by
@@ -29,7 +31,7 @@ Let us prove that the polytopes $P(G)$ to $P(G')$ can be mapped to each other
 by a pair of (real) affine transformations
 if and only if the graphs $G$ and $G'$ are isomorphic.
 
-# Assumptions
+## Graphs of principal series
 The graph $G$ is said to be of principal series if it satisfies the following:
 
 1. Every connected component of $G$ has at least $5$ trivalent vertices.
@@ -40,33 +42,29 @@ The graph $G$ is said to be of principal series if it satisfies the following:
 
 4. Graph $G$ has no leaves.
 
-# Algorithm/Lemma
+# Combinatorial Torelli
+
 Let $P = P(G)$ be a polytope in a real affine space $S = S(G)$
 associated with a graph $G$ of principal series.
 We will reconstruct the graph from the affine relations between the vertices of the polytope
 (which we further call _rays_ to distinguish them from vertices of the graph).
 
+## Algorithm
 0. The center of mass of all rays equals $0$.
 
-1. [Principal Step] In the set of all semi-sums of all pairs of distinct rays
+1. _Principal step_.
+   In the set of all semi-sums of all pairs of distinct rays
    record those that appear at least twice,
    i.e. record all the centers of the parallelograms that can be obtained
    as convex hulls of some pairs of diagonals.
    Claim: these are exactly the vectors $±e(i)$ for all (internal) edges $i$.
    So at this step we have reconstructed the set of (internal) edges of the graph.
 
-2. Consider the Euclidean pairing in which these vectors $±e(i)$ form an orthonormal base.
-   For every ray there are exactly $3$ coordinate axes $±e(i)$ that
-   are not orthogonal to $p$. A triple of edges $i,j,k$ meet in a vertex of $G$ iff
-   there exists at least one ray $p\in P$ non-orthogonal to all vectors $e(i),e(j),e(k)$.
-   If there is one such ray, there are exactly four.
-   So at this step we have reconstructed the sets of the edges and the vertices of the graph
-   and the adjacency data between them. Equivalently we can say that the set
-   of vertices of a graph is identified with the quotient-set of the set of rays,
-   and the adjacency matrix between the vertices is given by the maximal value
-   of the scalar products between the representative rays.
-
-# The proof of correctness.
+2. Let $p(i)$ be the coordinates of the ray $p=p(v,s)$ in a basis $\{±e(i)\}$.
+   The vertices and the adjacency matrix are given by the image of the map
+   $p \mapsto \{i : p(i) ≠ 0\}$.
+   
+## The proof of correctness
 
 The first two assumptions imply that all vectors $p(v,s)$ are distinct.
 
@@ -75,10 +73,8 @@ is a permutation of $(±1,±1,±1,0,0,...,0)$.
 So all vectors $p(v,s)$ are equidistant from $0$ with respect
 to the Euclidean norm in which the basis $e(i)$ is orthonormal.
 This implies that vectors $p(v,s)$ are convex independent,
-thus their set coincides with the set of the rays (vertices of the polytope $P(G)$),
-which we will denote $R$.
-The set $R$ of rays is partitioned into quadruples
-$\{ p(v,s) \}$ enumerated by vertices $v \in V(G)$.
+thus their set coincides with the set of the rays (vertices of the polytope $P(G)$).
+The latter is partitioned into quadruples $\{p(v,s)\}$ enumerated by vertices $v \in V(G)$.
 If $x,y,z,w$ are four distinct admissible sign assignments then
 there is a linear relation
 \begin{equation}
@@ -97,21 +93,19 @@ and similarly $-2 e(i) = p(v,z) + p(v,w) = p(v',x') + p(v',y')$.
 To prove the claim of Step 1 it remains to show that no other vector
 has two representations as a semi-sum.
 
-Now let us show that the first assumption implies that
-if for some vertices $u,u',v,v' \in V(G)$ and signs $x,y,z,w$ there is a relation
+Suppose that for some vertices $u,u',v,v' \in V(G)$ and signs $x,y,z,w$ there is a relation
 \begin{equation}
 p(u,x) + p(u',y) = p(v,z) + p(v',w)
 \end{equation}
-then either $u=u', v=v'$ or $\{u,u'\} = \{v,v'\}$.
 For each vertex consider the parity of times it appears in a relation.
-The relation implies that for every edge $i$ the parities of the adjacent vertices
-are equal. So the assigned parities of vertices are constant in every connected component.
+The relation implies that for every edge $i$ the parities of the adjacent vertices are equal.
+So the assigned parities of vertices are constant in every connected component.
 Since we have only four terms in a relation, number of odd vertices is at most four,
 so in every connected component with at least 5 vertices all vertices are even.
 
-So either $u=u'=v=v'$, but then six semi-sums are all distinct,
-or there are two vertices and each appears in the relation twice:
-either each vertex appears only on one side of the equation
+Thus either $u=u'=v=v'$, but then six semi-sums are all distinct,
+or there are two vertices and each appears in the relation twice.
+Hence either each vertex appears only on one side of the equation
 or both vertices appear on both sides.
 
 If each vertex appears on its own side then we have an equation $±e(i) = ±e(j)$
@@ -137,10 +131,13 @@ Now Step 1 is justified and Step 2 is straightforward.
 # Colorings
 
 A *colored graph* is a pair $(G,c)$ of a graph $G$ and a coloring function
-$c : V(G) \to \{\pm1\}$. Define isomorphisms between colored graphs $(G,c)$
-and $(G',c')$ as pairs $(f,g)$ of a graph isomorphism $f: G \to G'$
-and a function $g : E(G') \to \{\pm1\}$ such that for any
-vertex $v\in V(G)$ with edges of $f(v)$ denoted $i',j',k'$ the relation 
+$c : V(G) \to \{\pm1\}$.
+
+## Groupoid of colored graphs
+
+Define isomorphisms between colored graphs $(G,c)$ and $(G',c')$
+as pairs $(f,g)$ of a graph isomorphism $f: G \to G'$ and a function $g : E(G') \to \{\pm1\}$
+such that for any vertex $v\in V(G)$ with edges of $f(v)$ denoted $i',j',k'$ the relation 
 $c'(fv) / c(v) = g(i') g(j') g(k')$ holds. In particular if $f$ is the identity
 and we regard the colorings $c,c'$ as $0$-chains, then the respective morphisms
 is the set of $1$-chains whose boundary is the ratio of $c'$ and $c$,
@@ -152,10 +149,12 @@ where $g''(i'') := g'(i'') \cdot \prod_{f'(i') = i''} g'(i')$.
 Generators for the groupoid of colored graphs can be chosen as morphisms
 $(f,g) : (G,c) \to (G',c')$ 
 with either $c = c' \circ f, g = 1$
-or $f$ being identity and $g$ a boundary of a single edge.
+or $f$ being identity and $g$ a coloring of a single edge.
 
-Define $P(G,c)$ as the convex hull in $S(G)$ of rays $p(v,s)$ with $s(i) s(j) s(k) = c(v)$
-(the old definition corresponds to the constant coloring by $+1$).
+## Functor of quantum Clebsch-Gordan polytopes
+
+Define $P(G,c)$ as the convex hull in $S(G)$ of rays $p(v,s)$ with $s(i) s(j) s(k) = c(v)$.
+Note that $P(G) = P(G,c_0)$, where $c_0$ is the constant coloring $c_0(v) = +1 \forall v$.
 
 Any isomorphism $(f,g): (G,c) \to (G',c')$
 of colored graphs naturally induces an isomorphism 
@@ -165,13 +164,15 @@ and the generators of the second kind correspond to linear transformations
 that send $e(i)$ to $-e(i)$ for the chosen edge $i$ and preserve all other basic vectors.
 
 ## Colored combinatorial non-abelian Torelli theorem
-Association $P$ is a full functor from the groupoid of colored
-graphs of principal series to the groupoid of convex polytopes
-and affine isomorphisms. That is, any affinely linear isomorphism
-between polytopes $P(G,c)$ and $P(G',c')$ is induced by a uniquely defined
-isomorphism of colored graphs.
+::: {.theorem}
+Association $P$ is a _full_ functor
+from the groupoid of colored graphs of principal series
+to the groupoid of convex polytopes and affine isomorphisms.
+That is, any affinely linear isomorphism between polytopes $P(G,c)$ and $P(G',c')$
+is induced by a uniquely defined isomorphism of colored graphs.
+:::
 
-
+::: {.proof}
 The steps of the algorithm above can be applied without modifications.
 
 Then for any of $2^{\dim S}$ bases of $S$ with given coordinate axes $±e(i)$
@@ -184,37 +185,51 @@ are total parity of vertices in every leafless connected component.
 It suffices to notice that the change of the sign
 of a single vector in the base corresponds to simultaneous
 change of the color of the two vertices adjacent to this edge.
-
+:::
 
 # Algebro-geometric interpretation
 
 In algebraic geometry the classical (abelian) Torelli is a theorem and an algorithm
-that reconstructs a closed Riemann surface (smooth projective algebraic curve)
-from the pair its Jacobian variety $J(C)$ equipped with a principal polarization
-by $\Theta$-divisor. Usually ``Torelli package'' also has a a relation
-between automorphisms of the original curve and automorphisms of Jacobian
-as a polarized abelian variety.
+that reconstructs a closed Riemann surface (smooth projective algebraic curve) $C$
+from its Jacobian $J(C)$ equipped with a principal polarization by $\Theta$-divisor.
+Usually "Torelli package" also has a description of the automorphism group of $(J(C),\Theta)$
+in terms of automorphisms of $C$, or more generally classifies all isomorphisms
+between $(J(C),\Theta)$ and $(J(C'),\Theta')$.
 
-The Jacobian of a curve has an interpretation as (a connected component of)
-the Picard variety, that parametrizes isomorphism classes of line bundles
-of fixed numerical degree. One may also consider moduli spaces
-that parametrize (equivalence classes of) (semi-stable) vector bundles of higher ranks
-$r$, often denoted $U_r(C)$, the Picard variety being $U_1(C)$.
-The fibers of the determinantal fibration $\det: U_r(C) \to U_1(C)$ 
-over a line bundle $L\in U_1(C)$ are denoted by $SU_r(C,L)$,
-and their isomorphism classes depend only on the curve $C$, rank $r$
-and the residue $\mod r$ of the numerical degree of $L$,
-e.g. in case of rank two only the parity of the degree matters.
+The Jacobian $J(C)$ has an interpretation as (a connected component of) the Picard variety,
+that parametrizes isomorphism classes of line bundles of fixed numerical degree.
+Similarly the moduli space $U_r(C)$ parametrizes
+($S$-equivalence classes of semi-)stable vector bundles of rank $r$.
+Let $SU_r(C,L)$ be the fiber of the determinantal fibration $\det: U_r(C) \to U_1(C)$ 
+over a line bundle $L\in U_1(C)$.
+Any isomorphism of curves $f : C \to C'$ induces an isomorphism
+$SU_r(C,L) \to SU_r(C',f_* L)$,
+and any line bundle $M \in U_1(C)$ induces an isomorphism
+$SU_r(C,L) \to SU_r(C,L\otimes M^{\otimes r})$ given by $E \mapsto E \otimes M$.
+These isomorphisms generate a groupoid with objects being the pairs $(C,L)$
+of an algebraic curve $C$ equipped with a line bundle $L$
+and morphisms from $(C,L)$ to $(C',L')$ given by triples $(f,M';\iota)$
+of an isomorphism of curves $f: C \to C'$, a line bundle $M'/C'$
+an an isomorphism of line bundles $\iota: f_* L \to L' \otimes M'^{\otimes r}$,
+so the association $(C,L) \mapsto SU_r(C,L)$ is promoted to a functor from this groupoid
+to the groupoid of algebraic varieties and isomorphisms. 
 
 Unlike Jacobians the spaces $SU_r(C,L)$ have (anti-)canonical polarizations,
 and a non-abelian Torelli theorem for smooth curves
-proved in @MR1336336 reconstructs the curve $C$ from
-the respective moduli space $SU_r(C,L)$.
-[@MR1336336] also describes the group of automorphisms of these moduli spaces
-as extension of the automorphisms of the curve by $r$-torsion subgroup in Jacobian.
+was formulated by Andrey Tyurin following the foundational theorems
+of Narasimhan-Ramanan and Newstead.
+@MR1336336 use Higgs bundles to reconstruct the curve $C$ from
+the respective moduli space $SU_r(C,L)$
+and also describe the group of automorphisms of these moduli spaces
+as an extension of the automorphisms of the curve by $r$-torsion subgroup in Jacobian,
+effectively proving that under mild assumptions $SU_r$ considered
+as a functor between groupoids is _full_ for any $r>1$.
 
-In the combinatorial versions of these theorems the Riemann surfaces
-are replaced by trivalent graphs and the moduli spaces are replaced by convex polytopes.
+In the combinatorial versions of these theorems
+trivalent graphs are avatars of Riemann surfaces,
+colorings are avatars of line bundles,
+polytopes are avatars of moduli spaces,
+and the functor $P$ is an avatar of the functor $SU_2$.
 
 The analogy between curves and trivalent graphs is standard and
 can be explained by the following underlying geometry.
@@ -223,10 +238,10 @@ enumerated by vertices of the graph with some common points (nodes)
 corresponding to the edges. Leaves (if there are any) correspond to additional marked
 smooth points. These curves form a finite set of
 the deepest corners of the Deligne-Mumford moduli space of stable marked curves.
-A path between the corner and the bulk of the Deligne-Mumford space corresponds
+A path between the corner and the interior of the Deligne-Mumford space corresponds
 to a degeneration of a smooth algebraic curve to the graph curve,
 and the respective vanishing cycles give the Thurston cut system
-of the Riemann surface into trinions (pairs of pants, spheres with three holes,
+of the Riemann surface into trinions (i.e. spheres with three holes or pairs-of-pants)
 encoded by the same graph. 
 
 Moduli spaces such as Jacobians and $SU_r(C,L)$ vary together with
