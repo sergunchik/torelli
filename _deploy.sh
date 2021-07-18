@@ -2,8 +2,11 @@
 
 set -e
 
+echo 1
 [ -z "${GITHUB_PAT}" ] && exit 0
+echo 2
 [ "${TRAVIS_BRANCH}" != "master" ] && exit 0
+echo 3
 
 git config --global user.email "torelli@galkin.org.ru"
 git config --global user.name "Sergey Galkin"
