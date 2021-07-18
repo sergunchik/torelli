@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Colorings | Combinatorial non-abelian Torelli theorem</title>
+  <meta name="description" content="Chapter 3 Colorings | Combinatorial non-abelian Torelli theorem" />
+  <meta name="generator" content="bookdown 0.22.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Colorings | Combinatorial non-abelian Torelli theorem" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Colorings | Combinatorial non-abelian Torelli theorem" />
+  
+  
+  
+
+<meta name="author" content="Pieter Belmans" />
+<meta name="author" content="Sergey Galkin" />
+<meta name="author" content="Swarnava Mukhopadhyay" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="combinatorial-torelli.html"/>
+<link rel="next" href="algebro-geometric-interpretation.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Combinatorial non-abelian Torelli</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Graphs and polytopes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#graphs-of-principal-series"><i class="fa fa-check"></i><b>1.1</b> Graphs of principal series</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="combinatorial-torelli.html"><a href="combinatorial-torelli.html"><i class="fa fa-check"></i><b>2</b> Combinatorial Torelli</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="combinatorial-torelli.html"><a href="combinatorial-torelli.html#algorithm"><i class="fa fa-check"></i><b>2.1</b> Algorithm</a></li>
+<li class="chapter" data-level="2.2" data-path="combinatorial-torelli.html"><a href="combinatorial-torelli.html#the-proof-of-correctness"><i class="fa fa-check"></i><b>2.2</b> The proof of correctness</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="colorings.html"><a href="colorings.html"><i class="fa fa-check"></i><b>3</b> Colorings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="colorings.html"><a href="colorings.html#groupoid-of-colored-graphs"><i class="fa fa-check"></i><b>3.1</b> Groupoid of colored graphs</a></li>
+<li class="chapter" data-level="3.2" data-path="colorings.html"><a href="colorings.html#functor-of-quantum-clebsch-gordan-polytopes"><i class="fa fa-check"></i><b>3.2</b> Functor of quantum Clebsch-Gordan polytopes</a></li>
+<li class="chapter" data-level="3.3" data-path="colorings.html"><a href="colorings.html#colored-combinatorial-non-abelian-torelli-theorem"><i class="fa fa-check"></i><b>3.3</b> Colored combinatorial non-abelian Torelli theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="algebro-geometric-interpretation.html"><a href="algebro-geometric-interpretation.html"><i class="fa fa-check"></i><b>4</b> Algebro-geometric interpretation</a></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Combinatorial non-abelian Torelli theorem</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="colorings" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Colorings</h1>
+<p>A <em>colored graph</em> is a pair <span class="math inline">\((G,c)\)</span> of a graph <span class="math inline">\(G\)</span> and a coloring function
+<span class="math inline">\(c : V(G) \to \{\pm1\}\)</span>.</p>
+<div id="groupoid-of-colored-graphs" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Groupoid of colored graphs</h2>
+<p>Define isomorphisms between colored graphs <span class="math inline">\((G,c)\)</span> and <span class="math inline">\((G&#39;,c&#39;)\)</span>
+as pairs <span class="math inline">\((f,g)\)</span> of a graph isomorphism <span class="math inline">\(f: G \to G&#39;\)</span> and a function <span class="math inline">\(g : E(G&#39;) \to \{\pm1\}\)</span>
+such that for any vertex <span class="math inline">\(v\in V(G)\)</span> with edges of <span class="math inline">\(f(v)\)</span> denoted <span class="math inline">\(i&#39;,j&#39;,k&#39;\)</span> the relation
+<span class="math inline">\(c&#39;(fv) / c(v) = g(i&#39;) g(j&#39;) g(k&#39;)\)</span> holds. In particular if <span class="math inline">\(f\)</span> is the identity
+and we regard the colorings <span class="math inline">\(c,c&#39;\)</span> as <span class="math inline">\(0\)</span>-chains, then the respective morphisms
+is the set of <span class="math inline">\(1\)</span>-chains whose boundary is the ratio of <span class="math inline">\(c&#39;\)</span> and <span class="math inline">\(c\)</span>,
+so the set of automorphisms is principal homogeneous over the first relative homology group
+<span class="math inline">\(H_1(G,∂G;\{\pm1\})\)</span>. The composition of <span class="math inline">\((f,g) : (G,c) \to (G&#39;,c&#39;)\)</span>
+and <span class="math inline">\((f&#39;,g&#39;) : (G&#39;,c&#39;) \to (G&#39;&#39;,c&#39;&#39;)\)</span> is <span class="math inline">\((f&#39;\circ f, g&#39;&#39;)\)</span>
+where <span class="math inline">\(g&#39;&#39;(i&#39;&#39;) := g&#39;(i&#39;&#39;) \cdot \prod_{f&#39;(i&#39;) = i&#39;&#39;} g&#39;(i&#39;)\)</span>.</p>
+<p>Generators for the groupoid of colored graphs can be chosen as morphisms
+<span class="math inline">\((f,g) : (G,c) \to (G&#39;,c&#39;)\)</span>
+with either <span class="math inline">\(c = c&#39; \circ f, g = 1\)</span>
+or <span class="math inline">\(f\)</span> being identity and <span class="math inline">\(g\)</span> a coloring of a single edge.</p>
+</div>
+<div id="functor-of-quantum-clebsch-gordan-polytopes" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Functor of quantum Clebsch-Gordan polytopes</h2>
+<p>Define <span class="math inline">\(P(G,c)\)</span> as the convex hull in <span class="math inline">\(S(G)\)</span> of rays <span class="math inline">\(p(v,s)\)</span> with <span class="math inline">\(s(i) s(j) s(k) = c(v)\)</span>.
+Note that <span class="math inline">\(P(G) = P(G,c_0)\)</span>, where <span class="math inline">\(c_0\)</span> is the constant coloring <span class="math inline">\(c_0(v) = +1 \forall v\)</span>.</p>
+<p>Any isomorphism <span class="math inline">\((f,g): (G,c) \to (G&#39;,c&#39;)\)</span>
+of colored graphs naturally induces an isomorphism
+<span class="math inline">\(P(f,g) : P(g,c) \to P(G&#39;,c&#39;)\)</span> of the associated convex polytopes.
+For example, the generators of the first kind correspond to “permutations”
+and the generators of the second kind correspond to linear transformations
+that send <span class="math inline">\(e(i)\)</span> to <span class="math inline">\(-e(i)\)</span> for the chosen edge <span class="math inline">\(i\)</span> and preserve all other basic vectors.</p>
+</div>
+<div id="colored-combinatorial-non-abelian-torelli-theorem" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Colored combinatorial non-abelian Torelli theorem</h2>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-1" class="theorem"><strong>Theorem 3.1  </strong></span>Association <span class="math inline">\(P\)</span> is a <em>full</em> functor
+from the groupoid of colored graphs of principal series
+to the groupoid of convex polytopes and affine isomorphisms.
+That is, any affinely linear isomorphism between polytopes <span class="math inline">\(P(G,c)\)</span> and <span class="math inline">\(P(G&#39;,c&#39;)\)</span>
+is induced by a uniquely defined isomorphism of colored graphs.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-2" class="proof"><em>Proof</em>. </span>The steps of the algorithm above can be applied without modifications.</p>
+<p>Then for any of <span class="math inline">\(2^{\dim S}\)</span> bases of <span class="math inline">\(S\)</span> with given coordinate axes <span class="math inline">\(±e(i)\)</span>
+the coloring of the vertices of the graph is well- and uniquely defined
+by the parity of the number of minus signs in the coordinates of the respective rays
+in the given basis.
+A unique choice of signs corresponds to the original coloring, all other choices
+produce homologically equivalent colorings, unique invariants of colorings
+are total parity of vertices in every leafless connected component.
+It suffices to notice that the change of the sign
+of a single vector in the base corresponds to simultaneous
+change of the color of the two vertices adjacent to this edge.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="combinatorial-torelli.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="algebro-geometric-interpretation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/sergunchik/torelli/edit/main/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/sergunchik/torelli/blob/main/index.Rmd",
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

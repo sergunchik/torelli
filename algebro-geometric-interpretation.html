@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Algebro-geometric interpretation | Combinatorial non-abelian Torelli theorem</title>
+  <meta name="description" content="Chapter 4 Algebro-geometric interpretation | Combinatorial non-abelian Torelli theorem" />
+  <meta name="generator" content="bookdown 0.22.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Algebro-geometric interpretation | Combinatorial non-abelian Torelli theorem" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Algebro-geometric interpretation | Combinatorial non-abelian Torelli theorem" />
+  
+  
+  
+
+<meta name="author" content="Pieter Belmans" />
+<meta name="author" content="Sergey Galkin" />
+<meta name="author" content="Swarnava Mukhopadhyay" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="colorings.html"/>
+<link rel="next" href="references.html"/>
+<style type="text/css">
+p.abstract{
+  text-align: center;
+  font-weight: bold;
+}
+div.abstract{
+  margin: auto;
+  width: 90%;
+}
+</style>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Combinatorial non-abelian Torelli</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Graphs and polytopes</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#graphs-of-principal-series"><i class="fa fa-check"></i><b>1.1</b> Graphs of principal series</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="combinatorial-torelli.html"><a href="combinatorial-torelli.html"><i class="fa fa-check"></i><b>2</b> Combinatorial Torelli</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="combinatorial-torelli.html"><a href="combinatorial-torelli.html#algorithm"><i class="fa fa-check"></i><b>2.1</b> Algorithm</a></li>
+<li class="chapter" data-level="2.2" data-path="combinatorial-torelli.html"><a href="combinatorial-torelli.html#the-proof-of-correctness"><i class="fa fa-check"></i><b>2.2</b> The proof of correctness</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="colorings.html"><a href="colorings.html"><i class="fa fa-check"></i><b>3</b> Colorings</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="colorings.html"><a href="colorings.html#groupoid-of-colored-graphs"><i class="fa fa-check"></i><b>3.1</b> Groupoid of colored graphs</a></li>
+<li class="chapter" data-level="3.2" data-path="colorings.html"><a href="colorings.html#functor-of-quantum-clebsch-gordan-polytopes"><i class="fa fa-check"></i><b>3.2</b> Functor of quantum Clebsch-Gordan polytopes</a></li>
+<li class="chapter" data-level="3.3" data-path="colorings.html"><a href="colorings.html#colored-combinatorial-non-abelian-torelli-theorem"><i class="fa fa-check"></i><b>3.3</b> Colored combinatorial non-abelian Torelli theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="algebro-geometric-interpretation.html"><a href="algebro-geometric-interpretation.html"><i class="fa fa-check"></i><b>4</b> Algebro-geometric interpretation</a></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Combinatorial non-abelian Torelli theorem</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="algebro-geometric-interpretation" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Algebro-geometric interpretation</h1>
+<p>In algebraic geometry the classical (abelian) Torelli is a theorem and an algorithm
+that reconstructs a closed Riemann surface (smooth projective algebraic curve) <span class="math inline">\(C\)</span>
+from its Jacobian <span class="math inline">\(J(C)\)</span> equipped with a principal polarization by <span class="math inline">\(\Theta\)</span>-divisor.
+Usually “Torelli package” also has a description of the automorphism group of <span class="math inline">\((J(C),\Theta)\)</span>
+in terms of automorphisms of <span class="math inline">\(C\)</span>, or more generally classifies all isomorphisms
+between <span class="math inline">\((J(C),\Theta)\)</span> and <span class="math inline">\((J(C&#39;),\Theta&#39;)\)</span>.</p>
+<p>The Jacobian <span class="math inline">\(J(C)\)</span> has an interpretation as (a connected component of) the Picard variety,
+that parametrizes isomorphism classes of line bundles of fixed numerical degree.
+Similarly the moduli space <span class="math inline">\(U_r(C)\)</span> parametrizes
+(<span class="math inline">\(S\)</span>-equivalence classes of semi-)stable vector bundles of rank <span class="math inline">\(r\)</span>.
+Let <span class="math inline">\(SU_r(C,L)\)</span> be the fiber of the determinantal fibration <span class="math inline">\(\det: U_r(C) \to U_1(C)\)</span>
+over a line bundle <span class="math inline">\(L\in U_1(C)\)</span>.
+Any isomorphism of curves <span class="math inline">\(f : C \to C&#39;\)</span> induces an isomorphism
+<span class="math inline">\(SU_r(C,L) \to SU_r(C&#39;,f_* L)\)</span>,
+and any line bundle <span class="math inline">\(M \in U_1(C)\)</span> induces an isomorphism
+<span class="math inline">\(SU_r(C,L) \to SU_r(C,L\otimes M^{\otimes r})\)</span> given by <span class="math inline">\(E \mapsto E \otimes M\)</span>.
+These isomorphisms generate a groupoid with objects being the pairs <span class="math inline">\((C,L)\)</span>
+of an algebraic curve <span class="math inline">\(C\)</span> equipped with a line bundle <span class="math inline">\(L\)</span>
+and morphisms from <span class="math inline">\((C,L)\)</span> to <span class="math inline">\((C&#39;,L&#39;)\)</span> given by triples <span class="math inline">\((f,M&#39;;\iota)\)</span>
+of an isomorphism of curves <span class="math inline">\(f: C \to C&#39;\)</span>, a line bundle <span class="math inline">\(M&#39;/C&#39;\)</span>
+an an isomorphism of line bundles <span class="math inline">\(\iota: f_* L \to L&#39; \otimes M&#39;^{\otimes r}\)</span>,
+so the association <span class="math inline">\((C,L) \mapsto SU_r(C,L)\)</span> is promoted to a functor from this groupoid
+to the groupoid of algebraic varieties and isomorphisms.</p>
+<p>Unlike Jacobians the spaces <span class="math inline">\(SU_r(C,L)\)</span> have (anti-)canonical polarizations,
+and a non-abelian Torelli theorem for smooth curves
+was formulated by Andrey Tyurin following the foundational theorems
+of Narasimhan-Ramanan and Newstead.
+<span class="citation">Kouvidakis and Pantev (1995)</span> use Higgs bundles to reconstruct the curve <span class="math inline">\(C\)</span> from
+the respective moduli space <span class="math inline">\(SU_r(C,L)\)</span>
+and also describe the group of automorphisms of these moduli spaces
+as an extension of the automorphisms of the curve by <span class="math inline">\(r\)</span>-torsion subgroup in Jacobian,
+effectively proving that under mild assumptions <span class="math inline">\(SU_r\)</span> considered
+as a functor between groupoids is <em>full</em> for any <span class="math inline">\(r&gt;1\)</span>.</p>
+<p>In the combinatorial versions of these theorems
+trivalent graphs are avatars of Riemann surfaces,
+colorings are avatars of line bundles,
+polytopes are avatars of moduli spaces,
+and the functor <span class="math inline">\(P\)</span> is an avatar of the functor <span class="math inline">\(SU_2\)</span>.</p>
+<p>The analogy between curves and trivalent graphs is standard and
+can be explained by the following underlying geometry.
+With a graph one can associate a <em>graph curve</em>, the union of projective lines
+enumerated by vertices of the graph with some common points (nodes)
+corresponding to the edges. Leaves (if there are any) correspond to additional marked
+smooth points. These curves form a finite set of
+the deepest corners of the Deligne-Mumford moduli space of stable marked curves.
+A path between the corner and the interior of the Deligne-Mumford space corresponds
+to a degeneration of a smooth algebraic curve to the graph curve,
+and the respective vanishing cycles give the Thurston cut system
+of the Riemann surface into trinions (i.e. spheres with three holes or pairs-of-pants)
+encoded by the same graph.</p>
+<p>Moduli spaces such as Jacobians and <span class="math inline">\(SU_r(C,L)\)</span> vary together with
+the smooth curve <span class="math inline">\(C\)</span>, and it is natural to look for their limits
+as <span class="math inline">\(C\)</span> tends to a graph curve <span class="math inline">\(C(G)\)</span>.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="colorings.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/sergunchik/torelli/edit/main/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/sergunchik/torelli/blob/main/index.Rmd",
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

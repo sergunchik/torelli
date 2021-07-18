@@ -1,0 +1,11 @@
+graphs-and-polytopes
+graphs-of-principal-series
+combinatorial-torelli
+algorithm
+the-proof-of-correctness
+colorings
+groupoid-of-colored-graphs
+functor-of-quantum-clebsch-gordan-polytopes
+colored-combinatorial-non-abelian-torelli-theorem
+algebro-geometric-interpretation
+references
