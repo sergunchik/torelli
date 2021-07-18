@@ -2,3 +2,5 @@ language:
   ui:
     chapter_name: "Chapter "
 delete_merged_file: true
+view: https://github.com/sergunchik/torelli/blob/master/%s
+edit: https://github.com/sergunchik/torelli/edit/master/%s

@@ -1,30 +1,34 @@
-# MarkDown sources
-MD = $(wildcard *.md)
-# MD = trl.md
+# R MarkDown sources
+MD = $(wildcard *.Rmd)
+# MD = torelli.Rmd
 # associated HTML, LaTeX and PDF compiled files
-HTML = $(MD:.md=.html)
-TEX  = $(MD:.md=.tex)
-PDF  = $(MD:.md=.pdf)
+HTML = $(MD:.Rmd=.html)
+TEX  = $(MD:.Rmd=.tex)
+PDF  = $(MD:.Rmd=.pdf)
+EPUB = $(MD:.Rmd=.epub)
 # compiler from MarkDown to HTML, LaTeX and PDF
 PD = pandoc
 
-all:	pdf;
+all:	html epub pdf;
 html:	$(HTML);
-	$(PD) -s -o all.html $(HTML)
 tex:	$(TEX);
-	$(PD) -s -o all.tex $(TEX)
-#pdf:	tex $(PDF);
-#	latexmk -lualatex all.tex
 pdf:	$(PDF);
-%.html:	%.md;
-	$(PD) --mathml -o $@ $<
-%.tex:	%.md;
+epub:	$(EPUB);
+gitbook: ;
+	R -q -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")';
+bs4: ;
+	R -q -e 'bookdown::render_book("index.Rmd", "bookdown::bs4_book")';
+%.tex:	%.Rmd;
 	$(PD) -o $@ $<
-%.pdf:  %.md;
-	echo 'rmarkdown::render("$<")' | R -s
+%.epub: %.Rmd;
+	R -q -e 'bookdown::render_book("$<", "bookdown::epub_book")';
+%.html:	%.Rmd;
+	R -q -e 'rmarkdown::render("$<", output_format = "bookdown::html_document2")'
+%.pdf:  %.Rmd;
+	R -q -e 'rmarkdown::render("$<", output_format = "bookdown::pdf_document2")'
 clean:	;
-	@latexmk -silent -C > /dev/null
-	rm -f $(HTML) $(TEX) $(PDF) all.*
+	@latexmk -silent -C $(TEX) > /dev/null
+	rm -rf _book $(HTML) $(TEX) $(PDF) $(EPUB)
 	
 
 .PHONY: all
